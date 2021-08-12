@@ -108,6 +108,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Home.cshtml" />
     <Content Include="Views\Account\Error.cshtml" />
+    <Content Include="Views\Account\Customer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -117,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Security\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

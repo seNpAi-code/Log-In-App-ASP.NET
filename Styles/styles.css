@@ -15,7 +15,7 @@
 	color: #fff;
 }
 
-}
+
 @media screen and (max-width: 640px) {
 	.main-content{width: 90%;}
 	.company__info{

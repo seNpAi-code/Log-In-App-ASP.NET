@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using LogInApp.Models;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 namespace LogInApp.Controllers
 {
@@ -19,7 +20,13 @@ namespace LogInApp.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View("Login");
+            return View();
+        }
+
+        [Authorize]//making sure Home() cannot be invoked by any anonymous user
+        public ActionResult Home()//for testing
+        {
+            return View();
         }
 
         void connectionString()
@@ -42,6 +49,9 @@ namespace LogInApp.Controllers
             if (dr.Read())
             {
                 con.Close();
+                
+
+                //FormsAuthentication.SetAuthCookie(User.UserName, true);
                 return View("Home");
             }
             else

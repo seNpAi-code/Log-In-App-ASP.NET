@@ -10,41 +10,14 @@
 
 
 <!-- Main Content -->
-<div class="container-fluid">
-	<div class="row main-content bg-success text-center">
-		<div class="col-md-4 text-center company__info">
-			<span class="company__logo"><h2><span>Here</span></h2></span>
-			<h4 class="company_title">Your Company Logo</h4>
-		</div>
-		<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
-			<div class="container-fluid">
-				<div class="row">
-					<h2>Log In</h2>
-				</div>
-				<div class="row">
-					<form control="" class="form-group" action="Verify" method="post">
-						<div class="row">
-							<input type="text" name="UserName" id="UserName" class="form__input" placeholder="Username">
-						</div>
-						<div class="row">
-							<!-- <span class="fa fa-lock"></span> -->
-							<input type="password" name="Password" id="assword" class="form__input" placeholder="Password">
-						</div>
-						<div class="row">
-							<input type="checkbox" name="remember_me" id="remember_me" class="">
-							<label for="remember_me">Remember Me!</label>
-						</div>
-						<div class="row">
-							<input type="submit" value="Submit" class="btn">
-						</div>
-					</form>
-				</div>
-				<div class="row">
-					<p>Don't have an account? <a href="#">Register Here</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+<div>
+	<form action="Verify">
+		<label for="UserName">User Name:</label><br>
+		<input type="text" id="UserName" name="UserName"><br>
+		<label for="Password">Password:</label><br>
+		<input type="password" id="Password" name="Password"><br><br>
+		<input type="submit" value="Submit" id="submit">
+	</form> 
 </div>
 <!-- Footer -->
 	
