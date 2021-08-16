@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using FluentValidation.Mvc;
 
 namespace LogInApp
 {
@@ -12,7 +13,10 @@ namespace LogInApp
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            //RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            FluentValidationModelValidatorProvider.Configure();
         }
     }
 }
