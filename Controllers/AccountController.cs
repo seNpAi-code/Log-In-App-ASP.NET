@@ -19,7 +19,7 @@ namespace LogInApp.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View("Login");
+            return View();
         }
 
         void connectionString()

@@ -105,9 +105,9 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\_LayoutPage1.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Home.cshtml" />
     <Content Include="Views\Account\Error.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

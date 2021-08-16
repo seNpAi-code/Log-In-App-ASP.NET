@@ -1,51 +1,44 @@
-﻿
+﻿@model LogInApp.Models.Account
+
 @{
-	ViewBag.Title = "Login";
-	Layout = "~/Views/_LayoutPage1.cshtml";
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
+<h2>Login</h2>
 
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Account</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
 
-
-<!-- Main Content -->
-<div class="container-fluid">
-	<div class="row main-content bg-success text-center">
-		<div class="col-md-4 text-center company__info">
-			<span class="company__logo"><h2><span>Here</span></h2></span>
-			<h4 class="company_title">Your Company Logo</h4>
-		</div>
-		<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
-			<div class="container-fluid">
-				<div class="row">
-					<h2>Log In</h2>
-				</div>
-				<div class="row">
-					<form control="" class="form-group" action="Verify" method="post">
-						<div class="row">
-							<input type="text" name="UserName" id="UserName" class="form__input" placeholder="Username">
-						</div>
-						<div class="row">
-							<!-- <span class="fa fa-lock"></span> -->
-							<input type="password" name="Password" id="assword" class="form__input" placeholder="Password">
-						</div>
-						<div class="row">
-							<input type="checkbox" name="remember_me" id="remember_me" class="">
-							<label for="remember_me">Remember Me!</label>
-						</div>
-						<div class="row">
-							<input type="submit" value="Submit" class="btn">
-						</div>
-					</form>
-				</div>
-				<div class="row">
-					<p>Don't have an account? <a href="#">Register Here</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Footer -->
-	
-
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
