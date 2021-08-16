@@ -24,16 +24,16 @@ namespace LogInApp.Controllers
 
         void connectionString()
         {
-            con.ConnectionString = "data source=LAPTOP-SUT349NN; database=LoginDB; integrated security = SSPI";
+            con.ConnectionString = "data source=LAPTOP-SUT349NN; database=LoginDB; integrated security = SSPI;";
         }
         [HttpPost]
 
         public ActionResult Verify(Account acc)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[@"ConnectionString1"].ConnectionString;
+            //var connectionString = ConfigurationManager.ConnectionStrings[@"ConnectionString1"].ConnectionString;
             
             
-            //connectionString();
+            connectionString();
             con.Open();
             com.Connection = con;
             com.CommandText = "select * from Users where UserName='"+acc.UserName+"' and password='"+acc.Password+"'";
